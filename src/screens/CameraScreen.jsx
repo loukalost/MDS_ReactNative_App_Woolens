@@ -1,11 +1,11 @@
 import { Text, View } from 'react-native'
 
-function HomeScreen () {
+function CameraScreen () {
   return (
     <View>
-      <Text>Home</Text>
+      <Text>Camera</Text>
     </View>
   )
 }
 
-export default HomeScreen
+export default CameraScreen
