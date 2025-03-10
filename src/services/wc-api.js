@@ -1,11 +1,12 @@
 import axios from 'axios'
+import Config from 'react-native-config'
 import { Notifier, NotifierComponents } from 'react-native-notifier'
 
 const api = axios.create({
-  baseURL: 'https://artizanantes.com/wp-json/wc/v3',
+  baseURL: Config.WC_API_URL,
   auth: {
-    username: 'ck_fed7c4309c583a807a9f54e85d97d74788c98687',
-    password: 'cs_82d3d40a5ea26ec983e4185d33516ec410339b45'
+    username: Config.WC_CLIENT_KEY,
+    password: Config.WC_SECRET_KEY
   },
   headers: {
     'Content-Type': 'application/json',

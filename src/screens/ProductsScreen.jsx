@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
-import { Text, View } from 'react-native'
+import { View } from 'react-native'
 import { getAllProducts } from '../services/wc-api'
+import ProductsList from '../components/products/ProductsList'
 
 function ProductsScreen () {
   const [products, setProducts] = useState([])
@@ -16,8 +17,7 @@ function ProductsScreen () {
   }, [])
   return (
     <View>
-      <Text>Product List</Text>
-      <Text>{JSON.stringify(products, null, 2)}</Text>
+      <ProductsList products={products} />
     </View>
   )
 }
