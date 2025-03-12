@@ -1,10 +1,13 @@
-import { Text, View } from 'react-native'
+import { Image, Text, TouchableOpacity } from 'react-native'
+import { productsListItemStyle } from './ProductsListStyle'
 
-function ProductsListItem () {
+function ProductsListItem ({ product, onLongPress }) {
   return (
-    <View>
-      <Text>ProductsListItem</Text>
-    </View>
+    <TouchableOpacity onLongPress={() => onLongPress(product)} styles={productsListItemStyle.productContainer}>
+      <Image src={product?.images[0]?.src} style={productsListItemStyle.image} />
+      <Text>{product?.name}</Text>
+      <Text>{product?.price === '' ? 'Free' : product?.price + ',99 €'}</Text>
+    </TouchableOpacity>
   )
 }
 
